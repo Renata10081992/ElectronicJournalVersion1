@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cписок предметов</title>
+</head>
+<body>
+<div>
+    <h2>Cписок предметов</h2>
+    <div th:each="subject:${subjects}">
+        <a th:href="@{/subject/{id}(id=${subject.getId()})}" th:text="${subject.getTitle()}"></a>
+    </div>
+</div>
+</body>
+</html>

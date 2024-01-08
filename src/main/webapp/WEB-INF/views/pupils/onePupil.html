@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ученик</title>
+</head>
+<body>
+<p th:text="${onePupil.getName_pupil()}"></p>
+<p th:text="${onePupil.getClass_pupil()}"></p>
+
+<a th:href="@{/pupil/{id}/edit(id=${onePupil.getId_pupil()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/pupil/{id}(id=${onePupil.getId_pupil()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

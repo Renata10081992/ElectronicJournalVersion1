@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>предмет</title>
+</head>
+<body>
+<p th:text="${oneSubject.getTitle()}"></p>
+
+    <hr/>
+    <b>Классы:</b>
+    <br/>
+    <table th:each="cla:${classes}">
+        <a th:href="@{/class/{id}(id=${cla.getId()}, subjectId=${oneSubject.getId()})}" th:text="${cla.getNumber()}"></a>
+    </table>
+    <hr/>
+
+<a th:href="@{/subject/{id}/edit(id=${oneSubject.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/subject/{id}(id=${oneSubject.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

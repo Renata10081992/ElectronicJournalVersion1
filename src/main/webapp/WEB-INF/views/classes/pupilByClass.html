@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Cписок учеников</title>
+  <style>
+    .pupil {
+      display: block; /* Строчно-блочный элемент */
+      background: #8C959D; /* Серый цвет фона */
+      color: #fff; /* Белый цвет текста */
+      padding: 1rem 1.5rem; /* Поля вокруг текста */
+      text-decoration: none; /* Убираем подчёркивание */
+      border-radius: 3px; /* Скругляем уголки */
+      margin-bottom: 10px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+<h2 th:text="'Номер класса ' + ${oneClass.getNumber()}">test</h2>
+<div th:each="pupil:${pupilsByClass}" th:text="${pupil.getFirstname()} + ' ' + ${pupil.getLastname()}" class="pupil">
+</div>
+</body>
+</html>

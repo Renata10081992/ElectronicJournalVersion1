@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>new</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/pupil}" th:object="${newPupil}">
+    <label for="name">Name of pupil:</label>
+    <input name= "name" type= "text" th:field="*{name_pupil}"id="name"/>
+    <br>
+    <label for="class">Class:</label>
+    <input name= "class" type= "text" th:field="*{class_pupil}"id="class"/>
+    <br>
+    <input type="submit" value="CREATE!"/>
+</form>
+</body>
+</html>
