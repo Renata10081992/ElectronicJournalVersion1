@@ -6,13 +6,17 @@
 </head>
 <body>
 <form th:method="POST" th:action="@{/pupil}" th:object="${newPupil}">
-    <label for="name">Name of pupil:</label>
-    <input name= "name" type= "text" th:field="*{name_pupil}"id="name"/>
+    <label for="firstname">First name:</label>
+    <input name= "firstname" type= "text" th:field="*{firstname}"id="firstname"/>
+    <div style="color: red" th:if="${#fields.hasErrors('firstname')}"th:errors="*{firstname}">ERROR</div>
     <br>
-    <label for="class">Class:</label>
-    <input name= "class" type= "text" th:field="*{class_pupil}"id="class"/>
+    <label for="lastname">Last Name:</label>
+    <input name= "lastname" type= "text" th:field="*{lastname}"id="lastname"/>
+    <div style="color: red" th:if="${#fields.hasErrors('lastname')}"th:errors="*{lastname}">ERROR</div>
     <br>
-    <input type="submit" value="CREATE!"/>
+    <input type="hidden" th:value="${newPupil.classId}" name="classId"/>
+    <input type="submit" value="Сохранить"/>
 </form>
+
 </body>
 </html>

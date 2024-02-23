@@ -6,7 +6,6 @@ public class Class_ {
 
     public Class_() {
     }
-
     public Class_(int id, String number) {
         this.id = id;
         this.number = number;

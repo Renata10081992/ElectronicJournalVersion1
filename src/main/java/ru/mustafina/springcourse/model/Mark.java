@@ -1,23 +1,28 @@
 package ru.mustafina.springcourse.model;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+
 import java.util.Date;
 
 public class Mark {
     private int id;
     private int subjectId;
     private int pupilId;
+
+    @Min(value = 2, message = "от 2-5")
+    @Max(value = 5, message = "от 2-5")
     private Integer markValue;
-    private Date dateOfAssessment;
 
     public Mark() {
     }
 
-    public Mark(int id, int subjectId, int pupilId, int markValue, Date dateOfAssessment) {
+    public Mark(int id, int subjectId, int pupilId, int markValue) {
         this.id = id;
         this.subjectId = subjectId;
         this.pupilId = pupilId;
         this.markValue = markValue;
-        this.dateOfAssessment = dateOfAssessment;
     }
 
     public int getId() {
@@ -50,13 +55,5 @@ public class Mark {
 
     public void setMarkValue(int markValue) {
         this.markValue = markValue;
-    }
-
-    public Date getDateOfAssessment() {
-        return dateOfAssessment;
-    }
-
-    public void setDateOfAssessment(Date dateOfAssessment) {
-        this.dateOfAssessment = dateOfAssessment;
     }
 }

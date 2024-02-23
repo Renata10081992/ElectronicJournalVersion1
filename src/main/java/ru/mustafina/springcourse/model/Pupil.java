@@ -1,18 +1,29 @@
 package ru.mustafina.springcourse.model;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 public class Pupil {
     private int id;
+
+    private int classId;
+    @NotEmpty(message = "поле имя не может быть пустым")
+    @Size(min = 2, max = 50, message = "Длина должна быть от 2 до 10 символов")
+
     private String firstname;
 
+    @NotEmpty(message = "поле фамилия не может быть пустым")
+    @Size(min = 2, max = 50, message = "Длина должна быть от 2 до 10 символов")
     private String lastname;
-    private int classId;
 
-   public Pupil(){};
+    public Pupil() {
+    }
 
-    public Pupil(int id, String name_pupil, int class_pupil) {
+    public Pupil(int id, int classId, String firstname, String lastname) {
         this.id = id;
-        this.firstname = name_pupil;
-        this.classId = class_pupil;
+        this.classId = classId;
+        this.firstname = firstname;
+        this.lastname = lastname;
     }
 
     public int getId() {

@@ -20,7 +20,7 @@
 <h2 th:text="'Выберите класс '">test</h2>
 
 <div th:each="class:${classList}">
-  <a th:href="@{/pupil/{id}(id=${class.getId()})}" th:text="${class.getNumber()} + ' класс'" class="btn"></a>
+  <a th:href="@{/pupil(classId=${class.getId()})}" th:text="${class.getNumber()} + ' класс'" class="btn"></a>
 </div>
 
 </body>

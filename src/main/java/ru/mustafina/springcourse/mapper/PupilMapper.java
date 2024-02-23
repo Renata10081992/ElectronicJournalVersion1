@@ -11,9 +11,10 @@ public class PupilMapper implements RowMapper<Pupil> {
     @Override
     public Pupil mapRow(ResultSet rs, int rowNum) throws SQLException {
         Pupil pupil=new Pupil();
-        pupil.setId(rs.getInt("id_pupil"));
-        pupil.setFirstname(rs.getString("name_pupil"));
-        pupil.setClassId(rs.getInt("class_pupil"));
+        pupil.setId(rs.getInt("id"));
+        pupil.setFirstname(rs.getString("firstname"));
+        pupil.setLastname(rs.getString("lastname"));
+        pupil.setClassId(rs.getInt("class_id"));
         return pupil;
     }
 }

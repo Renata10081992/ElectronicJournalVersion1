@@ -19,12 +19,12 @@ public class PupilDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<Pupil> read() {
+    public List<Pupil> readAll() {
         return jdbcTemplate.query("select * from Pupil", new PupilMapper());
     }
 
     public Pupil readOne(int id) {
-        return jdbcTemplate.query("Select * from Pupil where id_pupil=?", new Object[]{id}, new PupilMapper()).stream().findAny().orElse(null);
+        return jdbcTemplate.query("Select * from Pupil where id=?", new Object[]{id}, new PupilMapper()).stream().findAny().orElse(null);
     }
 
     public List<Pupil> getPupilsByClassId(int classId) {
@@ -32,11 +32,7 @@ public class PupilDao {
     }
 
     public void create(Pupil p) {
-        jdbcTemplate.update("Insert into Pupil (name_pupil, class_pupil) values (?, ?)", p.getId(), p.getClass());
-    }
-
-    public void update(Pupil p, int id) {
-        jdbcTemplate.update("Update Pupil set name_pupil=?, class_pupil=? where id=?", p.getId(), p.getClass(), id);
+        jdbcTemplate.update("Insert into Pupil (firstname, lastname, class_id) values (?, ?, ?)", p.getFirstname(), p.getLastname(), p.getClassId());
     }
 
     public void delete(int id) {

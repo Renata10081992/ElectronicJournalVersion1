@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import ru.mustafina.springcourse.mapper.PupilMapper;
 import ru.mustafina.springcourse.model.Class_;
-import ru.mustafina.springcourse.model.Pupil;
-import ru.mustafina.springcourse.model.Subject;
 
 import java.util.List;
 

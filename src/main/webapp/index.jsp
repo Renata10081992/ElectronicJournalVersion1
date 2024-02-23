@@ -18,10 +18,7 @@
 </head>
 <body>
 <h2>Электронный журнал</h2>
-
-
 <a href="/subject" class="btn">Журнал оценок</a>
-
 <a href="/class" class="btn">Список учеников</a>
 </body>
 </html>
